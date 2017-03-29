@@ -1,0 +1,13 @@
+---
+apache_balancers: {}
+apache_balancermembers: {}
+apache_custom_configs: {}
+apache_fastcgi_servers: {}
+apache_listens: {}
+apache_mods: {}   # Note: Don't manually set this parameter without a specific reason
+apache_namevirtualhosts: {}
+apache_vhosts:
+  localhost:
+    port: 80
+    docroot: /var/www/html
+apache_vhost_customs: {}

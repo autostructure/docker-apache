@@ -1,0 +1,16 @@
+---
+
+from: ubuntu:latest
+image_name: docker.fs.usda.gov:3000/apachetest:canary
+hiera-data: hieradata
+hiera-config: hiera.yaml
+env:
+  - APACHE_LOCK_DIR=/var/lock/apache2
+  - APACHE_LOG_DIR=/var/log/apache2
+  - APACHE_PID_FILE=/var/run/apache2.pid
+  - APACHE_RUN_DIR=/var/run/apache2
+  - APACHE_RUN_GROUP=www-data
+  - APACHE_RUN_USER=www-data
+expose: 80 443
+#run: "apt-get install -y www-browser"
+cmd: ["/usr/sbin/apache2", "-DFOREGROUND"]
