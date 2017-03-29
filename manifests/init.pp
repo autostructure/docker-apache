@@ -32,12 +32,7 @@ create_resources('::apache::vhost', $apache_vhosts)
 $apache_vhost_customs = hiera('apache_vhost_customs')
 create_resources('::apache::vhost::custom', $apache_vhost_customs)
 
-#apache::vhost { 'localhost':
-#  port    => '80',
-#  docroot => '/var/www/html',
-#}
-
 file { '/var/www/html/index.html':
   ensure  => present,
-  content => 'built by Puppet\n',
+  content => 'built by Puppet',
 }
